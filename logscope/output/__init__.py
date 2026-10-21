@@ -1,0 +1,1 @@
+# logscope.output package
