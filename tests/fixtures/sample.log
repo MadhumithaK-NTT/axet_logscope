@@ -1,0 +1,11 @@
+2026-10-01 09:15:00 INFO Service started
+2026-10-01 09:16:12 ERROR Database connection failed
+2026-10-01 09:17:05 WARN Disk usage above 80%
+2026-10-01 09:18:00 INFO Request processed successfully
+2026-10-01 09:18:45 ERROR Database connection failed
+2026-10-01 09:19:30 ERROR Timeout waiting for response
+2026-10-01 09:20:00 INFO Health check passed
+this line is malformed and should be skipped
+2026-10-01 09:21:00 ERROR Database connection failed
+2026-10-01 09:22:00 WARN Memory usage high
+2026-10-01 09:22:30 INFO Cache cleared
