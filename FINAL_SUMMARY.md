@@ -63,7 +63,22 @@ raising an exception. The count is reported by every command.
 
 ---
 
-## 4. Test Evidence
+## 4. Implementation Steps
+
+| Step | Deliverable | Tests | Status |
+|------|-------------|-------|--------|
+| 1 | `logscope/parser.py`, `LogEntry` dataclass, `tests/fixtures/sample.log`, `tests/test_parser.py` | 28 | ✅ Complete |
+| 2 | `logscope/commands/summary.py`, `tests/test_summary.py` | 29 | ✅ Complete |
+| 3 | `logscope/commands/timeline.py`, `tests/test_timeline.py` | 44 | ✅ Complete |
+| 4 | `logscope/commands/grep.py` (lazy iterator refactor), `tests/test_grep.py` | 48 | ✅ Complete |
+| 5 | `logscope/output/json_output.py`, `logscope/output/md_output.py`, `tests/test_output.py` | 50 | ✅ Complete |
+| 6 | `logscope/cli.py`, `logscope/__main__.py`, `tests/test_cli.py` | 49 | ✅ Complete |
+| 7 | `scripts/gen_log.py`, `PERFORMANCE.md`, `README.md`, `.gitignore`, `FINAL_SUMMARY.md` | — | ✅ Complete |
+| **Total** | | **248** | **✅ All passed** |
+
+---
+
+## 5. Test Evidence
 
 ```
 python -m pytest -v
@@ -85,11 +100,11 @@ Test coverage spans six test files:
 
 ---
 
-## 5. Acceptance Criteria
+## 6. Acceptance Criteria
 
 | Criterion | Evidence | Status |
 |-----------|----------|--------|
-| All three commands work on `tests/fixtures/sample.log` | Smoke tests produce correct output: 10 valid lines, 1 malformed line (see §6) | **PASS** |
+| All three commands work on `tests/fixtures/sample.log` | Smoke tests produce correct output: 10 valid lines, 1 malformed line (see §7) | **PASS** |
 | Unit tests for parser and each command pass | 248 tests passed in 2.25 s | **PASS** |
 | 100 MB log processed in under 60 s with stable memory | 104,857,615 bytes / 2,222,979 lines processed in **3.53 s**; peak working set **28.7 MB** (well below the 100 MB input) | **PASS** |
 | Malformed-line count reported by every command | `sample.log` reports 1 malformed; 100 MB generated file reports 44,779 malformed (~2 %) | **PASS** |
@@ -97,7 +112,7 @@ Test coverage spans six test files:
 
 ---
 
-## 6. Commands to Reproduce
+## 7. Commands to Reproduce
 
 ### Run all tests
 
@@ -158,7 +173,7 @@ full output.
 
 ---
 
-## 7. Key Project Files
+## 8. Key Project Files
 
 | Path | Purpose |
 |------|---------|
@@ -173,7 +188,7 @@ full output.
 
 ---
 
-## 8. Evidence Checklist
+## 9. Evidence Checklist
 
 The following screenshots / terminal captures should be included when
 submitting this assignment:
