@@ -20,7 +20,7 @@ VALID_BUCKETS: frozenset[str] = frozenset({"15m", "30m", "1h"})
 
 _BUCKET_MINUTES: dict[str, int] = {"15m": 15, "30m": 30, "1h": 60}
 
-_BAR_CHAR = "█"
+_BAR_CHAR = "#"
 _BAR_SCALE = 1  # one character per ERROR; keeps output readable for unit tests
 
 
@@ -70,7 +70,7 @@ def _floor_timestamp(ts: datetime, width_minutes: int) -> datetime:
 def _label(bucket_start: datetime, width_minutes: int) -> str:
     """Human-readable label for a bucket, e.g. ``2026-10-01 09:15``."""
     end = bucket_start + timedelta(minutes=width_minutes)
-    return f"{bucket_start.strftime('%Y-%m-%d %H:%M')}–{end.strftime('%H:%M')}"
+    return f"{bucket_start.strftime('%Y-%m-%d %H:%M')}-{end.strftime('%H:%M')}"
 
 
 def timeline(
